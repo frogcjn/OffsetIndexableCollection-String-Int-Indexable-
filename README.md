@@ -52,3 +52,13 @@ if let number = b.index(where: { $0 > "1" }) {
 }
 
 ```
+You can also munually transfer a Collection.Index to the offset index:
+
+```
+import Foundation
+
+let x = a.range(of: "1234")!
+print(a.offsetIndices.proxyRange(x))
+print(a.offsetIndices.proxyIndex(x.lowerBound))
+```
+
