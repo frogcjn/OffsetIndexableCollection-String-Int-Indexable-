@@ -12,7 +12,7 @@ extension Substring : OffsetIndexableCollection {
 }
 ```
 Then you can use String with offset index (int index)
-```
+```Swift
 let a = "01234"
 
 print(a[0]) // 0
