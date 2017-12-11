@@ -54,7 +54,7 @@ if let number = b.index(where: { $0 > "1" }) {
 ```
 You can also munually transfer a Collection.Index to the offset index:
 
-```
+```Swift
 import Foundation
 
 let x = a.range(of: "1234")!
