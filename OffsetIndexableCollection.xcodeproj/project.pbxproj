@@ -7,13 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DAB53161FDF88F400852F8C /* OffsetIndexable+NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB53151FDF88F400852F8C /* OffsetIndexable+NSString.swift */; };
+		6DAB53181FDF907500852F8C /* OffsetIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB53171FDF907500852F8C /* OffsetIndexable.swift */; };
 		6DB88EBC1FDF329B005321E1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EBB1FDF329B005321E1 /* main.swift */; };
-		6DB88EC91FDF32AD005321E1 /* OffsetIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EC31FDF32AC005321E1 /* OffsetIndexable.swift */; };
-		6DB88ECA1FDF32AD005321E1 /* Range+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EC41FDF32AC005321E1 /* Range+.swift */; };
-		6DB88ECB1FDF32AD005321E1 /* IndexProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EC51FDF32AC005321E1 /* IndexProxyProtocol.swift */; };
-		6DB88ECC1FDF32AD005321E1 /* OffsetIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EC61FDF32AD005321E1 /* OffsetIndices.swift */; };
-		6DB88ECD1FDF32AD005321E1 /* String+OffsetIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EC71FDF32AD005321E1 /* String+OffsetIndexable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,14 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6DAB53151FDF88F400852F8C /* OffsetIndexable+NSString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OffsetIndexable+NSString.swift"; sourceTree = "<group>"; };
+		6DAB53171FDF907500852F8C /* OffsetIndexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexable.swift; sourceTree = "<group>"; };
 		6DB88EB81FDF329B005321E1 /* OffsetIndexableCollection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OffsetIndexableCollection; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB88EBB1FDF329B005321E1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		6DB88EC31FDF32AC005321E1 /* OffsetIndexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexable.swift; sourceTree = "<group>"; };
-		6DB88EC41FDF32AC005321E1 /* Range+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+.swift"; sourceTree = "<group>"; };
-		6DB88EC51FDF32AC005321E1 /* IndexProxyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexProxyProtocol.swift; sourceTree = "<group>"; };
-		6DB88EC61FDF32AD005321E1 /* OffsetIndices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndices.swift; sourceTree = "<group>"; };
-		6DB88EC71FDF32AD005321E1 /* String+OffsetIndexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+OffsetIndexable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				6DB88EBB1FDF329B005321E1 /* main.swift */,
-				6DB88EC51FDF32AC005321E1 /* IndexProxyProtocol.swift */,
-				6DB88EC61FDF32AD005321E1 /* OffsetIndices.swift */,
-				6DB88EC31FDF32AC005321E1 /* OffsetIndexable.swift */,
-				6DAB53151FDF88F400852F8C /* OffsetIndexable+NSString.swift */,
-				6DB88EC71FDF32AD005321E1 /* String+OffsetIndexable.swift */,
-				6DB88EC41FDF32AC005321E1 /* Range+.swift */,
+				6DAB53171FDF907500852F8C /* OffsetIndexable.swift */,
 			);
 			path = OffsetIndexableCollection;
 			sourceTree = "<group>";
@@ -138,13 +123,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB88ECA1FDF32AD005321E1 /* Range+.swift in Sources */,
-				6DB88ECD1FDF32AD005321E1 /* String+OffsetIndexable.swift in Sources */,
-				6DB88EC91FDF32AD005321E1 /* OffsetIndexable.swift in Sources */,
 				6DB88EBC1FDF329B005321E1 /* main.swift in Sources */,
-				6DAB53161FDF88F400852F8C /* OffsetIndexable+NSString.swift in Sources */,
-				6DB88ECC1FDF32AD005321E1 /* OffsetIndices.swift in Sources */,
-				6DB88ECB1FDF32AD005321E1 /* IndexProxyProtocol.swift in Sources */,
+				6DAB53181FDF907500852F8C /* OffsetIndexable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
