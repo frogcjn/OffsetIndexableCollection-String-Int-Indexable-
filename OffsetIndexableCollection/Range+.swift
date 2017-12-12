@@ -11,3 +11,9 @@ public extension Range {
         return try Range<T>(uncheckedBounds: (lower: transform(lowerBound), upper: transform(upperBound)))
     }
 }
+
+public extension Collection {
+    var range: Range<Index> {
+        return startIndex..<endIndex
+    }
+}

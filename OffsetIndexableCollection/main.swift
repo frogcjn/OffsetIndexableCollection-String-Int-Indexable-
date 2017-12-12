@@ -46,5 +46,10 @@ if let number = b.index(where: { $0 > "1" }) {
 
 import Foundation
 
-print(a.range(of: b)!)
-print(a.rangeOfCharacter(from: ["1"])!)
+print(a.range(of: b)!) // 1..<5
+
+let offsetIndices = a.offsetIndices
+print(offsetIndices.range) // 0..<5
+print(a.range) // Index(_compoundOffset: 0, _cache: Swift.String.Index._Cache.utf16)..<Index(_compoundOffset: 20, _cache: Swift.String.Index._Cache.utf16)
+print(a.range == offsetIndices.targetRange(offsetIndices.range)) // true
+print(offsetIndices.proxyRange(a.range) == offsetIndices.range) // true
