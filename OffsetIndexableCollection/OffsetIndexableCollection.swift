@@ -8,6 +8,7 @@
 
 public protocol OffsetIndexableCollection : Collection {
     typealias OffsetIndex = OffsetIndices<Self>.Index
+    typealias OffsetRange = Range<OffsetIndex>
     var offsetIndices: OffsetIndices<Self> { get }
 }
 

@@ -18,8 +18,8 @@ public struct OffsetIndices<T: Collection> {
 
 extension OffsetIndices : IndexProxyProtocol, Collection {
     
-    public typealias Target = T
     public typealias Index = T.IndexDistance
+    public typealias Target = T
 
     public var target: Target {
         return _target

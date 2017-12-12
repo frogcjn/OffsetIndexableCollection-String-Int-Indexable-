@@ -43,3 +43,8 @@ if let number = b.index(of: "1") {
 if let number = b.index(where: { $0 > "1" }) {
     print(number) // 1
 }
+
+import Foundation
+
+print(a.range(of: b)!)
+print(a.rangeOfCharacter(from: ["1"])!)

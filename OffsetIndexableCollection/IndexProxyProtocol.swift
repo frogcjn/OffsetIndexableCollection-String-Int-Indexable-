@@ -13,6 +13,8 @@ public protocol IndexProxyProtocol {
     
     typealias TargetIndex = Target.Index
     typealias ProxyIndex = ProxyIndices.Index
+    typealias TargetRange = Range<TargetIndex>
+    typealias ProxyRange = Range<ProxyIndex>
     
     var target: Target { get }
     var proxyIndices: ProxyIndices { get }
@@ -25,7 +27,9 @@ public protocol IndexProxyProtocol {
     // TargetRange -> ProxyRange
     // ProxyRange -> TargetRange
     func proxyRange<R: RangeExpression>(_ targetRange: R) -> Range<ProxyIndex> where R.Bound == TargetIndex
+    func proxyRange(_ targetRange: UnboundedRange) -> Range<ProxyIndex>
     func targetRange<R: RangeExpression>(_ proxyRange: R) -> Range<TargetIndex> where R.Bound == ProxyIndex
+    func targetRange(_ proxyRange: UnboundedRange) -> Range<TargetIndex>
 }
 
 public extension IndexProxyProtocol {
@@ -33,8 +37,16 @@ public extension IndexProxyProtocol {
         return targetRange.relative(to: target).map(proxyIndex)
     }
     
+    public func proxyRange(_ targetRange: UnboundedRange) -> Range<ProxyIndex> {
+        return (target.startIndex...).relative(to: target).map(proxyIndex)
+    }
+    
     public func targetRange<R: RangeExpression>(_ proxyRange: R) -> Range<TargetIndex> where R.Bound == ProxyIndex {
         return proxyRange.relative(to: proxyIndices).map(targetIndex)
+    }
+    
+    public func targetRange(_ proxyRange: UnboundedRange) -> Range<TargetIndex> {
+        return (proxyIndices.startIndex...).relative(to: proxyIndices).map(targetIndex)
     }
 }
 
