@@ -57,8 +57,12 @@ You can also munually transfer a Collection.Index to the offset index:
 ```Swift
 import Foundation
 
-let x = a.range(of: "1234")!
-print(a.offsetIndices.proxyRange(x))
-print(a.offsetIndices.proxyIndex(x.lowerBound))
+print(a.range(of: b)!) // 1..<5
+
+let offsetIndices = a.offsetIndices
+print(offsetIndices.range) // 0..<5
+print(a.range) // Index(_compoundOffset: 0, _cache: Swift.String.Index._Cache.utf16)..<Index(_compoundOffset: 20, _cache: Swift.String.Index._Cache.utf16)
+print(a.range == offsetIndices.targetRange(offsetIndices.range)) // true
+print(offsetIndices.proxyRange(a.range) == offsetIndices.range) // true
 ```
 
