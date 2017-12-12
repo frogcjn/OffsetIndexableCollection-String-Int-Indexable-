@@ -52,12 +52,17 @@ if let number = b.index(where: { $0 > "1" }) {
 }
 
 ```
-You can also munually transfer a Collection.Index to the offset index:
+
+You could use NSString API with offset index.
 
 ```Swift
 import Foundation
 
 print(a.range(of: b)!) // 1..<5
+```
+
+You could also munually transfer a Collection.Index to the offset index:
+```
 
 let offsetIndices = a.offsetIndices
 print(offsetIndices.range) // 0..<5
