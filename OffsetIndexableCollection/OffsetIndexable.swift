@@ -62,7 +62,7 @@ public extension IndexProxyProtocol {
     }
     
     public func proxyRange(_ targetRange: UnboundedRange) -> Range<ProxyIndex> {
-        return target.range.relative(to: target).map(proxyIndex)
+        return target.range.map(proxyIndex)
     }
     
     public func targetRange<R: RangeExpression>(_ proxyRange: R) -> Range<TargetIndex> where R.Bound == ProxyIndex {
@@ -70,7 +70,7 @@ public extension IndexProxyProtocol {
     }
     
     public func targetRange(_ proxyRange: UnboundedRange) -> Range<TargetIndex> {
-        return proxyIndices.range.relative(to: proxyIndices).map(targetIndex)
+        return proxyIndices.range.map(targetIndex)
     }
 }
 
