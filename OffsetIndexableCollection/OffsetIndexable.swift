@@ -74,13 +74,12 @@ public extension IndexProxyProtocol {
     }
 }
 
-public extension IndexProxyProtocol {
-    var proxyIndices: Self {
+public extension IndexProxyProtocol where ProxyIndices == Self {
+    
+    var proxyIndices: ProxyIndices {
         return self
     }
-}
-
-public extension IndexProxyProtocol where ProxyIndices == Self {
+    
     var startIndex: Self.Index {
         return proxyIndex(target.startIndex)
     }
@@ -119,6 +118,7 @@ extension OffsetIndices : IndexProxyProtocol, Collection {
     
     public typealias Index = T.IndexDistance
     public typealias Target = T
+    public typealias ProxyIndices = OffsetIndices<T>
     
     public var target: Target {
         return _target
