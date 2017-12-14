@@ -21,7 +21,7 @@ extension String.UnicodeScalarView : OffsetIndexableCollection {
 }
 
 ```
-Then you can use String with offset index (int index)
+Then you can use String, Substring, String.UTF8View, String.UTF16View, String.UnicodeScalarView with offset indices
 ```Swift
 
 let s = "caf\u{65}\u{301}"
