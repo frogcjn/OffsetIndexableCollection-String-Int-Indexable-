@@ -14,6 +14,15 @@ extension String : OffsetIndexableCollection {
 extension Substring : OffsetIndexableCollection {
 }
 
+extension String.UTF8View : OffsetIndexableCollection {
+}
+
+extension String.UTF16View : OffsetIndexableCollection {
+}
+
+extension String.UnicodeScalarView : OffsetIndexableCollection {
+}
+
 // MARK: - Range +
 
 public extension Range {
