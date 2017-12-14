@@ -10,9 +10,33 @@ extension String : OffsetIndexableCollection {
 
 extension Substring : OffsetIndexableCollection {
 }
+
+extension String.UTF8View : OffsetIndexableCollection {
+}
+
+extension String.UTF16View : OffsetIndexableCollection {
+}
+
+extension String.UnicodeScalarView : OffsetIndexableCollection {
+}
+
 ```
-Then you can use String with offset index (int index)
+Then you can use String, Substring, String.UTF8View, String.UTF16View, String.UnicodeScalarView with offset indices
 ```Swift
+
+let s = "café"
+print(s.count) // 4
+print(s[s.count-1]) // é
+let u = s.unicodeScalars
+print(u.count) // 5
+print(u[u.count-1]) //́
+
+let u = s.unicodeScalars
+print(u.count)
+for i in 0..<u.count {
+    print(u[i])
+}
+
 let a = "01234"
 
 print(a[0]) // 0
