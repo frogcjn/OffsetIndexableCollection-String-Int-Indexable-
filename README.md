@@ -24,11 +24,12 @@ extension String.UnicodeScalarView : OffsetIndexableCollection {
 Then you can use String, Substring, String.UTF8View, String.UTF16View, String.UnicodeScalarView with offset indices
 ```Swift
 
-let s = "caf\u{65}\u{301}"
-print(s.count)
-for i in 0..<s.count {
-    print(s[i])
-}
+let s = "café"
+print(s.count) // 4
+print(s[s.count-1]) // é
+let u = s.unicodeScalars
+print(u.count) // 5
+print(u[u.count-1]) //́
 
 let u = s.unicodeScalars
 print(u.count)
