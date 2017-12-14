@@ -10,9 +10,32 @@ extension String : OffsetIndexableCollection {
 
 extension Substring : OffsetIndexableCollection {
 }
+
+extension String.UTF8View : OffsetIndexableCollection {
+}
+
+extension String.UTF16View : OffsetIndexableCollection {
+}
+
+extension String.UnicodeScalarView : OffsetIndexableCollection {
+}
+
 ```
 Then you can use String with offset index (int index)
 ```Swift
+
+let s = "caf\u{65}\u{301}"
+print(s.count)
+for i in 0..<s.count {
+    print(s[i])
+}
+
+let u = s.unicodeScalars
+print(u.count)
+for i in 0..<u.count {
+    print(u[i])
+}
+
 let a = "01234"
 
 print(a[0]) // 0
