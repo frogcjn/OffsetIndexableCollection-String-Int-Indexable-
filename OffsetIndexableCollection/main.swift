@@ -6,17 +6,12 @@
 //  Copyright © 2017年 Cao, Jiannan. All rights reserved.
 //
 
-let s = "caf\u{65}\u{301}"
-print(s.count)
-for i in 0..<s.count {
-    print(s[i])
-}
-
+let s = "café"
+print(s.count) // 4
+print(s[s.count-1]) // é
 let u = s.unicodeScalars
-print(u.count)
-for i in 0..<u.count {
-    print(u[i])
-}
+print(u.count) // 5
+print(u[u.count-1]) //́
 
 let a = "01234"
  
