@@ -6,12 +6,20 @@
 //  Copyright © 2017年 Cao, Jiannan. All rights reserved.
 //
 
-let s = "café"
+let s = "caféz"
 print(s.count) // 4
+print(s.index(of:"z")! )
+
 print(s[s.count-1]) // é
 let u = s.unicodeScalars
 print(u.count) // 5
 print(u[u.count-1]) //́
+let ss = s[s.indices[1]...]
+print(ss) // afé
+print(s[s.offsetIndex(ss.startIndex) - 1]) // c
+print(s[s.index(byOffset: 1)]) // a
+
+let z = s.enumerated()
 
 let a = "01234"
  
@@ -22,8 +30,8 @@ print(a[...]) // 01234
 print(a[..<2]) // 01
 print(a[...2]) // 012
 print(a[2...]) // 234
+print(a[2..<3]) // 2
 print(a[2...3]) // 23
-print(a[2...2]) // 2
 
 if let number = a.index(of: "1") {
     print(number) // 1
@@ -58,5 +66,5 @@ print(a.range(of: b)!) // 1..<5
 let offsetIndices = a.offsetIndices
 print(offsetIndices.range) // 0..<5
 print(a.range) // Index(_compoundOffset: 0, _cache: Swift.String.Index._Cache.utf16)..<Index(_compoundOffset: 20, _cache: Swift.String.Index._Cache.utf16)
-print(a.range == offsetIndices.targetRange(offsetIndices.range)) // true
-print(offsetIndices.proxyRange(a.range) == offsetIndices.range) // true
+print(a.range == a.range(byOffset: offsetIndices.range)) // true
+print(a.offsetRange(a.range) == offsetIndices.range) // true

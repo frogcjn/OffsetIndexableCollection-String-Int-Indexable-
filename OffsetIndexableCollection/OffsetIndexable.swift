@@ -23,6 +23,20 @@ extension String.UTF16View : OffsetIndexableCollection {
 extension String.UnicodeScalarView : OffsetIndexableCollection {
 }
 
+extension DefaultIndices: OffsetIndexableCollection {
+    
+}
+
+#if swift(>=4.1)
+#else
+extension DefaultRandomAccessIndices: OffsetIndexableCollection {
+    
+}
+extension DefaultBidirectionalIndices: OffsetIndexableCollection {
+    
+}
+#endif
+
 // MARK: - Range +
 
 public extension Range {
@@ -42,7 +56,7 @@ public extension Collection {
 public protocol IndexProxyProtocol {
     
     associatedtype Target : Collection
-    associatedtype ProxyIndices : Collection
+    associatedtype ProxyIndices : Collection = Self
     
     typealias TargetIndex = Target.Index
     typealias ProxyIndex = ProxyIndices.Index
@@ -66,6 +80,7 @@ public protocol IndexProxyProtocol {
 }
 
 public extension IndexProxyProtocol {
+    
     func proxyRange<R: RangeExpression>(_ targetRange: R) -> Range<ProxyIndex> where R.Bound == TargetIndex {
         return targetRange.relative(to: target).map(proxyIndex)
     }
@@ -127,7 +142,10 @@ extension OffsetIndices : IndexProxyProtocol, Collection {
     
     public typealias Index = T.IndexDistance
     public typealias Target = T
+    
+    #if swift(>=4.1)
     public typealias ProxyIndices = OffsetIndices<T>
+    #endif
     
     public var target: Target {
         return _target
@@ -158,6 +176,22 @@ public extension OffsetIndexableCollection {
     
     var offsetIndices: OffsetIndices<Self> {
         return OffsetIndices<Self>(self)
+    }
+    
+    func offsetIndex(_ index: Index) -> OffsetIndex {
+        return offsetIndices.proxyIndex(index)
+    }
+    
+    func index(byOffset offsetIndex: OffsetIndex) -> Index {
+        return offsetIndices.targetIndex(offsetIndex)
+    }
+    
+    func offsetRange(_ : Range<Index>) -> OffsetRange {
+        return offsetIndices.proxyRange(range)
+    }
+    
+    func range(byOffset offsetRange: OffsetRange) -> Range<Index> {
+        return offsetIndices.targetRange(offsetRange)
     }
 }
 
