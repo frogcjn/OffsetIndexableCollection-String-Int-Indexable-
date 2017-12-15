@@ -16,7 +16,12 @@ extension OffsetIndexableSequence {
     }
     
     var endIndex: Int {
-        return reduce(0) { result, _ in result + 1 }
+        var iterator = makeIterator()
+        var i = 0
+        while let _ = iterator.next() {
+            i += 1
+        }
+        return i
     }
     
     func index(after i: Int) -> Int {
@@ -57,7 +62,7 @@ struct MyIterator: IteratorProtocol {
     // required: IteratorProtocol.Element <- "next() -> Element?"
 }
 
-extension MySequence {
+ extension MySequence: OffsetIndexableSequence {
     typealias Element = Void
 }
 */
