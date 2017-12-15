@@ -7,6 +7,7 @@
 //
 
 let s = "caféz"
+
 print(s.count) // 4
 print(s.index(of:"z")! )
 

@@ -12,21 +12,30 @@ protocol OffsetIndexableSequence: Collection {
 
 extension OffsetIndexableSequence {
     var startIndex: Int {
-        return Array(self).startIndex
+        return 0
     }
     
     var endIndex: Int {
-        return Array(self).endIndex
+        return reduce(0) { result, _ in result + 1 }
     }
     
     func index(after i: Int) -> Int {
         return i + 1
     }
     
-    // start, end, index(after i: Int) -> indices: DefaultIndices
-    
     subscript(position: Int) -> Self.Element {
-        return Array(self)[position]
+        if (!(position >= 0)) {
+            fatalError("Fatal error: Index out of range", file: #file, line: #line)
+        }
+        
+        var iterator = makeIterator()
+        var i = 0
+        while let element = iterator.next() {
+            if position == i { return element }
+            i += 1
+        }
+        
+        fatalError("Fatal error: Index out of range", file: #file, line: #line)
     }
 }
 
@@ -48,7 +57,7 @@ struct MyIterator: IteratorProtocol {
     // required: IteratorProtocol.Element <- "next() -> Element?"
 }
 
-extension MySequence : OffsetIndexableSequence {
+extension MySequence {
     typealias Element = Void
 }
 */
