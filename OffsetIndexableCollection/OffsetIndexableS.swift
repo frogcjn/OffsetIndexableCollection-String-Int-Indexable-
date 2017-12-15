@@ -6,23 +6,6 @@
 //  Copyright © 2017年 Cao, Jiannan. All rights reserved.
 //
 
-class MySequence : Sequence {
-    
-    func makeIterator() -> MyIterator {
-        return MyIterator()
-    }
-    
-    // required: Sequence.Iterator <- "makeIterator() -> Iterator"
-    // required: Sequence.Element <- "Iterator.Element"
-}
-
-struct MyIterator: IteratorProtocol {
-    func next() -> Void? {
-        return nil
-    }
-    // required: IteratorProtocol.Element <- "next() -> Element?"
-}
-
 protocol OffsetIndexableSequence: Collection {
     
 }
@@ -47,6 +30,25 @@ extension OffsetIndexableSequence {
     }
 }
 
+/*
+class MySequence : Sequence {
+    
+    func makeIterator() -> MyIterator {
+        return MyIterator()
+    }
+    
+    // required: Sequence.Iterator <- "makeIterator() -> Iterator"
+    // required: Sequence.Element <- "Iterator.Element"
+}
+
+struct MyIterator: IteratorProtocol {
+    func next() -> Void? {
+        return nil
+    }
+    // required: IteratorProtocol.Element <- "next() -> Element?"
+}
+
 extension MySequence : OffsetIndexableSequence {
     typealias Element = Void
 }
+*/

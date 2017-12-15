@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DAB53181FDF907500852F8C /* OffsetIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB53171FDF907500852F8C /* OffsetIndexable.swift */; };
+		6DAB53181FDF907500852F8C /* OffsetIndexableC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB53171FDF907500852F8C /* OffsetIndexableC.swift */; };
 		6DB88EBC1FDF329B005321E1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB88EBB1FDF329B005321E1 /* main.swift */; };
-		6DDFD8041FE3539700A91CE0 /* MySequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDFD8031FE3539600A91CE0 /* MySequence.swift */; };
+		6DDFD8041FE3539700A91CE0 /* OffsetIndexableS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDFD8031FE3539600A91CE0 /* OffsetIndexableS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6DAB53171FDF907500852F8C /* OffsetIndexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexable.swift; sourceTree = "<group>"; };
+		6DAB53171FDF907500852F8C /* OffsetIndexableC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableC.swift; sourceTree = "<group>"; };
 		6DB88EB81FDF329B005321E1 /* OffsetIndexableCollection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OffsetIndexableCollection; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB88EBB1FDF329B005321E1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		6DDFD8031FE3539600A91CE0 /* MySequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySequence.swift; sourceTree = "<group>"; };
+		6DDFD8031FE3539600A91CE0 /* OffsetIndexableS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetIndexableS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				6DB88EBB1FDF329B005321E1 /* main.swift */,
-				6DAB53171FDF907500852F8C /* OffsetIndexable.swift */,
-				6DDFD8031FE3539600A91CE0 /* MySequence.swift */,
+				6DAB53171FDF907500852F8C /* OffsetIndexableC.swift */,
+				6DDFD8031FE3539600A91CE0 /* OffsetIndexableS.swift */,
 			);
 			path = OffsetIndexableCollection;
 			sourceTree = "<group>";
@@ -127,8 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB88EBC1FDF329B005321E1 /* main.swift in Sources */,
-				6DAB53181FDF907500852F8C /* OffsetIndexable.swift in Sources */,
-				6DDFD8041FE3539700A91CE0 /* MySequence.swift in Sources */,
+				6DAB53181FDF907500852F8C /* OffsetIndexableC.swift in Sources */,
+				6DDFD8041FE3539700A91CE0 /* OffsetIndexableS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
